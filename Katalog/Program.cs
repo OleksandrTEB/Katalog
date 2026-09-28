@@ -4,7 +4,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 Produkt procesor = new Produkt();
 procesor.Nazwa = "Procesor";
-procesor.Cena = 899.00;
+procesor.Cena = -899.00;
 procesor.Kategoria = "Electronic";
 procesor.Ilosc = 1;
 
