@@ -44,6 +44,14 @@
             get { return _cena * Ilosc; }
         }
 
+        public Produkt(string nazwa, double cena, string kategoria, int ilosc)
+        {
+            Nazwa = nazwa;
+            Cena = cena;
+            Kategoria = kategoria;
+            Ilosc = ilosc;
+        }
+
         //public Produkt(string nazwa, double cena, string kategoria, int ilosc)
         //{
         //    Nazwa = nazwa;
