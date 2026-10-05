@@ -19,8 +19,10 @@ double suma = 0;
 
 foreach (Produkt produkt in produkty)
 {
-    Console.WriteLine($"Nazwa: {produkt.Nazwa,-25} | Cena: {produkt.Cena,10} | Kategoria: {produkt.Kategoria} | Ilość: {produkt.Ilosc,5} | Wartość: {produkt.WartoscMagazynu,10:F2}");
-    if(minimalnaCena > produkt.Cena)
+    Console.WriteLine(produkt.ZwracaProdukt());
+    //produkt.PokazProdukt();
+    //Console.WriteLine($"Nazwa: {produkt.Nazwa,-25} | Cena: {produkt.Cena,10} | Kategoria: {produkt.Kategoria} | Ilość: {produkt.Ilosc,5} | Wartość: {produkt.WartoscMagazynu,10:F2}");
+    if (minimalnaCena > produkt.Cena)
         minimalnaCena = produkt.Cena;
 
     if (maksymalnaCena < produkt.Cena)
@@ -34,6 +36,10 @@ double sredniaCena = suma / produkty.Length;
 Console.WriteLine($"Minimalna cena: {minimalnaCena:F2} zł");
 Console.WriteLine($"Średnia cena: {sredniaCena:F2} zł");
 Console.WriteLine($"Maksymalna cena: {maksymalnaCena:F2} zł");
+
+double wartoscMagazynu = Produkt.ObliczWartoszMagazynu(produkty);
+
+Console.WriteLine($"Wartosc całego magazynu: {wartoscMagazynu:f2}");
 
 
 
