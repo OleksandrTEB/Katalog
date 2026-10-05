@@ -82,5 +82,18 @@
         {
             return Ilosc > MinimalnyStan;
         }
+
+        public void Sprzedaj()
+        {
+            if(CzyMoznaZamuwic())
+            {
+                Ilosc--;
+                Console.WriteLine($"Sprzedano produkt: {Nazwa}, Pozostało: {Ilosc}");
+            }
+            else
+            {
+                Console.WriteLine($"Nie można sprzedać produktu: {Nazwa}, Niema na stanie");
+            }
+        }
     }
 }

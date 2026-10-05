@@ -2,9 +2,9 @@
 
 Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-Produkt procesor = new Produkt("Procesor", 899.00, "Electronic", 1);
+Produkt procesor = new Produkt("Procesor", 899.00, "Electronic", 10);
 
-Produkt ram = new Produkt("Pamięć RAM", 565.05, "Electronic", 1);
+Produkt ram = new Produkt("Pamięć RAM", 565.05, "Electronic", 3);
 
 Produkt ssd = new Produkt("Dysk SSD", 44.99, "Electronic", 1);
 
@@ -29,18 +29,23 @@ foreach (Produkt produkt in produkty)
         maksymalnaCena = produkt.Cena;
 
     suma += produkt.Cena;
+    for (int i = produkt.Ilosc; i > 0; i--)
+    {
+        produkt.Sprzedaj();
+    }
+
+    Console.WriteLine("-------------------------------------------------------------------------------------------------");
 }
 
-double sredniaCena = suma / produkty.Length;
+//double sredniaCena = suma / produkty.Length;
 
-Console.WriteLine($"Minimalna cena: {minimalnaCena:F2} zł");
-Console.WriteLine($"Średnia cena: {sredniaCena:F2} zł");
-Console.WriteLine($"Maksymalna cena: {maksymalnaCena:F2} zł");
+//Console.WriteLine($"Minimalna cena: {minimalnaCena:F2} zł");
+//Console.WriteLine($"Średnia cena: {sredniaCena:F2} zł");
+//Console.WriteLine($"Maksymalna cena: {maksymalnaCena:F2} zł");
 
-double wartoscMagazynu = Produkt.ObliczWartoszMagazynu(produkty);
+//double wartoscMagazynu = Produkt.ObliczWartoszMagazynu(produkty);
 
-Console.WriteLine($"Wartosc całego magazynu: {wartoscMagazynu:f2}");
-
+//Console.WriteLine($"Wartosc całego magazynu: {wartoscMagazynu:f2}");
 
 
 //string[] nazwy = { "Procesor", "Pamięć RAM", "Dysk SSD", "Zasilacz", "Laptop" };
