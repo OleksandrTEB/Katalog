@@ -100,5 +100,17 @@
                 Console.WriteLine($"Nie można sprzedać produktu: {Nazwa}, Niema na stanie");
             }
         }
+
+        public static Produkt ZnajdzPoNazwie(Produkt[] produkty, string nazwa)
+        {
+            foreach(Produkt p in produkty)
+            {
+                if (p.Nazwa == nazwa)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
     }
 }
