@@ -78,6 +78,11 @@
             return suma;
         }
 
+        public static double ObliczWartoszMagazynu(List<Produkt> produkty)
+        {
+            return produkty.Sum(p => p.WartoscMagazynu);
+        }
+
         public bool CzyMoznaZamuwic()
         {
             return Ilosc > MinimalnyStan;

@@ -10,7 +10,13 @@ Produkt ssd = new Produkt("Dysk SSD", 44.99, "Electronic", 1);
 
 Produkt zasilacz = new Produkt("Zasilacz", 189.99, "Electronic", 5);
 
-Produkt[] produkty = [procesor, ram, ssd, zasilacz];
+List<Produkt> produkty = new List<Produkt>();
+produkty.Add(procesor);
+produkty.Add(ram);
+produkty.Add(ssd);
+produkty.Add(zasilacz);
+
+
 
 double minimalnaCena = produkty[0].Cena;
 double maksymalnaCena = produkty[0].Cena;
@@ -36,6 +42,15 @@ foreach (Produkt produkt in produkty)
 
     Console.WriteLine("-------------------------------------------------------------------------------------------------");
 }
+
+double sumaListy = produkty.Sum(p => p.Cena);
+
+List<Produkt> drogieProdukty = produkty.Where(p => p.Cena > 200).ToList();
+
+double sumaDrogichProduktuw = produkty.Where(p => p.Cena > 200).Sum(p => p.Cena);
+
+double srednia = produkty.Average(p => p.Cena);
+
 
 //double sredniaCena = suma / produkty.Length;
 
