@@ -54,7 +54,7 @@ double sumaDrogichProduktuw = listaProduktuw.Where(p => p.Cena > 200).Sum(p => p
 double srednia = listaProduktuw.Average(p => p.Cena);
 
 
-Produkt prod = Produkt.ZnajdzPoNazwie(produkty, "Procesor");
+Produkt prod = Produkt.ZnajdzPoNazwie(listaProduktuw, "pam");
 
 Console.WriteLine(prod.Nazwa);
 Console.WriteLine(prod.Cena);
